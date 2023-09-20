@@ -1,0 +1,84 @@
+<div class="container">
+  <h1 class="my-4">Dashboard For F1 Driver's</h1>
+
+  <div class="row">
+    <!-- <div class="col-md-12 mb-11"> -->
+      <h5 class="card-title" style=" color: chartreuse;">Add Driver's</h5>
+      <div class="card_1">
+
+        <div class="card-body">
+          <br>
+          <br>
+          <div class="row ">
+            <div class="col-1"></div>
+            <div class="col-2"> Driver Name</div>
+            <div class="col-2"> <input type="text" class="form-control" [(ngModel)]="f1Driverobj['name']"></div>
+            <div class="col-1"></div>
+            <div class="col-2"> Team</div>
+            <div class="col-2"> <input type="text" class="form-control" [(ngModel)]="f1Driverobj['team']"></div>
+          </div>
+          <br>
+          <div class="row ">
+            <div class="col-1"></div>
+            <div class="col-2"> Country</div>
+            <div class="col-2"> <input type="text" class="form-control" [(ngModel)]="f1Driverobj['country']"></div>
+            <div class="col-1"></div>
+            <div class="col-2"> Year</div>
+            <div class="col-2"> <input type="text" class="form-control" [(ngModel)]="f1Driverobj['year']"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-12 text-center"> <button class="btn btn-primary" (click)="saveData()"> Save </button></div>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+    <!-- </div> -->
+<br>
+    <!-- Table Section Inside a Card -->
+    <div class="col-md-12">
+      <h5 class="card-title" style=" color: chartreuse;">Data Table</h5>
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Name <br></th>
+                  <th>Team &nbsp;&nbsp;
+                    <select class="form-select" id="teamFilter" [(ngModel)]="selectedTeam" >
+                      <option value="">All Teams</option>
+                      <option *ngFor="let team of teams" [value]="team">{{ team }}</option>->
+                    </select>
+                  </th>
+                  <th>Country  &nbsp;&nbsp;
+                    <select class="form-select" id="countryFilter"  [(ngModel)]="selectedCountry">
+                      <option value="">All Countries</option>
+                      <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                    </select>
+                  </th>
+                  <th>Year &nbsp;&nbsp;
+                    <select class="form-select" id="yearFilter" [(ngModel)]="selectedYear">
+                      <option value="">All Years</option>
+                      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                    </select>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let driver of filteredDrivers">
+                  <td>{{ driver.name }}</td>
+                  <td>{{ driver.team }}</td>
+                  <td>{{ driver.country }}</td>
+                  <td>{{ driver.year }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+.container {
+  padding: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: none;
+  background-color: #e9e965;
+  border-radius: 90px;
+  box-shadow: 0 4px 6px rgb(234 234 234);
+}
+
+
+.card_1{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: #e9e965;
+  border-radius: 90px;
+  box-shadow: 0 4px 6px rgb(234 234 234);
+}
+
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.table {
+  background-color: #fff;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+/* */
+/* Add more custom styles as needed */
